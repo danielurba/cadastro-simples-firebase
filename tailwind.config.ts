@@ -3,9 +3,9 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}"
   ],
+  safelist: ["from-blue-400", "from-green-400", "from-gray-400", "to-blue-700", "to-green-700", "to-gray-700"],
   theme: {
     extend: {
       backgroundImage: {
