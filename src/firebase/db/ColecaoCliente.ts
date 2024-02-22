@@ -24,7 +24,12 @@ export default class ColecaoCliente implements ClienteRepositorio {
         } else {
             const docRef = await this.#colecao().add(cliente)
             const doc = await docRef.get()
-            return doc.data()
+            const clienteSalvo = doc.data() as Cliente | undefined
+            if(clienteSalvo) {
+                return clienteSalvo
+            } else {
+                throw new Error('Cliente não encontrado após salvar.');
+            }
         }
     }
 
